@@ -1,12 +1,12 @@
 def calculate(a, b, operation):
-    """Calculate using addition, subtraction, multiplication, or division."""
+    """Calculate using addition."""
     if type(a) not in (int, float) or type(b) not in (int, float):
         raise TypeError("Both operands must be numbers.")
 
     if operation == "+":
         return a + b
-    
-        raise ValueError("Unsupported operation. Use +, -, *, or /.")
+    else:
+        raise ValueError("Unsupported operation. Use +.")
 
 
 def main():
@@ -21,13 +21,13 @@ def main():
             print("Goodbye!")
             break
 
-        
         try:
             a = float(input("Enter first number: "))
             b = float(input("Enter second number: "))
             result = calculate(a, b, operation)
             print("Result:", result)
-        except (ValueError, TypeError, ZeroDivisionError) as error:
+
+        except (ValueError, TypeError) as error:
             print("Error:", error)
 
 
